@@ -1,4 +1,4 @@
-CXX   = /usr/local/bin/mpicxx
+CXX   = /opt/homebrew/Cellar/mpich/4.3.0/bin/mpicxx
 CXXFLAGS = -O3 -pedantic -Wall -std=c++11
 
 include make.exec
