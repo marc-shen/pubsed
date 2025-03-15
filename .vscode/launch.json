@@ -105,7 +105,7 @@
             "name": "Debug run-mpi",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/src/sedona6.ex",
+            "program": "${workspaceFolder}/src/run/sedona6.ex",
             "args": ["${input:paramFile}"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/src",

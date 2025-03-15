@@ -65,10 +65,10 @@
             "command": "zsh",
             "args": [
                 "-c",
-                "source ~/.zshrc && module purge && module load sedona && mpirun -np 4 ${workspaceFolder}/src/sedona6.ex ${workspaceFolder}/${input:paramFile}"
+                "source ~/.zshrc && module purge && module load sedona && mpirun -np 4 ${workspaceFolder}/src/run/sedona6.ex ${workspaceFolder}/${input:paramFile}"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/src"  // 切换到 src 目录
+                "cwd": "${workspaceFolder}/src/run"  // 切换到 src/run 目录
             },
             "problemMatcher": [],
             "detail": "Run the program with MPI after loading the environment"

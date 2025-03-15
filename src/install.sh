@@ -14,6 +14,7 @@ fi
 TARGET=$1
 EXECDIR=./build
 MAKEDIR=./makefiles
+RUNDIR=./run
 
 if [ $TARGET == "help" ]
 then
@@ -25,7 +26,7 @@ then
 	rm -f $EXECDIR/*.o $EXECDIR/gomc $EXECDIR/*.cpp $EXECDIR/*.h
 elif [ $TARGET == "realclean" ]
 then
-	rm -rf $EXECDIR
+	rm -rf $EXECDIR $RUNDIR
 else
   mkdir -p $EXECDIR
 	cp -p transport/*.cpp transport/*.h $EXECDIR
@@ -39,5 +40,6 @@ else
   cp -p $MAKEDIR/Makefile.$TARGET $EXECDIR/Makefile
   cd $EXECDIR; make
   cd ..
-  cp $EXECDIR/gomc sedona6.ex
+  mkdir -p $RUNDIR
+  cp $EXECDIR/gomc $RUNDIR/sedona6.ex
 fi
