@@ -2,6 +2,20 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "load-environment-and-build",
+            "type": "shell",
+            "command": "zsh",
+            "args": [
+                "-c",
+                "source ~/.zshrc && module purge && module load sedona && ./install.sh mac"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Load environment and build the project"
+        },
+        {
             "label": "build",
             "type": "shell",
             "command": "./install.sh",
@@ -48,17 +62,24 @@
         {
             "label": "run-mpi",
             "type": "shell",
-            "command": "mpirun",
+            "command": "zsh",
             "args": [
-                "-np", "4",  // 指定进程数
-                "${workspaceFolder}/src/sedona6.ex",  // 可执行文件路径
-                "param.lua"  // 参数文件
+                "-c",
+                "source ~/.zshrc && module purge && module load sedona && mpirun -np 4 ${workspaceFolder}/src/sedona6.ex ${workspaceFolder}/${input:paramFile}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/src"  // 切换到 src 目录
             },
             "problemMatcher": [],
-            "detail": "Run the program with MPI"
+            "detail": "Run the program with MPI after loading the environment"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "paramFile",
+            "type": "promptString",
+            "description": "Enter the path to param.lua (relative to workspace folder):",
+            "default": "src/param.lua"  // 默认路径
         }
     ]
 }

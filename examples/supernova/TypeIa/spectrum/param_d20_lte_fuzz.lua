@@ -1,11 +1,10 @@
-
+sedona_home        = os.getenv('SEDONA_HOME')
 -- model type and file
 grid_type    = "grid_1D_sphere"   
-model_file   = "../models/toy_SNIa_1D.mod" 
+model_file   = sedona_home.."/examples/supernova/TypeIa/models/toy_SNIa_1D.mod" 
 hydro_module = "homologous"
 
 -- defaults and atomic data files
-sedona_home        = os.getenv('SEDONA_HOME')
 defaults_file      = sedona_home.."/defaults/sedona_defaults.lua"
 data_atomic_file   = sedona_home.."/data/ASD_atomdata.hdf5"
 data_fuzzline_file = sedona_home.."/data/kurucz_cd23_fuzz.hdf5"
