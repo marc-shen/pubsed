@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "./install.sh",
+            "args": ["mac"],
+            "options": {
+                "cwd": "${workspaceFolder}/src",  // 切换到 src 目录
+                "env": {
+                    "CXX": "/opt/homebrew/Cellar/mpich/4.3.0/bin/mpicxx",
+                    "CXXFLAGS": "-O3 -pedantic -Wall -std=c++17",
+                    "GSL_DIR": "/opt/homebrew/Cellar/gsl/2.8",
+                    "LUA_DIR": "/opt/homebrew/Cellar/lua/5.4.7",
+                    "HDF5_DIR": "/opt/homebrew/Cellar/hdf5/1.14.6"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile the project using install.sh script"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "./install.sh",
+            "args": ["clean"],
+            "options": {
+                "cwd": "${workspaceFolder}/src"  // 切换到 src 目录
+            },
+            "problemMatcher": [],
+            "detail": "Clean the build directory"
+        },
+        {
+            "label": "realclean",
+            "type": "shell",
+            "command": "./install.sh",
+            "args": ["realclean"],
+            "options": {
+                "cwd": "${workspaceFolder}/src"  // 切换到 src 目录
+            },
+            "problemMatcher": [],
+            "detail": "Clean the build directory and remove generated files"
+        },
+        {
+            "label": "run-mpi",
+            "type": "shell",
+            "command": "mpirun",
+            "args": [
+                "-np", "4",  // 指定进程数
+                "${workspaceFolder}/src/sedona6.ex",  // 可执行文件路径
+                "param.lua"  // 参数文件
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src"  // 切换到 src 目录
+            },
+            "problemMatcher": [],
+            "detail": "Run the program with MPI"
+        }
+    ]
+}

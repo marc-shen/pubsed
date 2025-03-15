@@ -7,17 +7,17 @@
                 "/opt/homebrew/Cellar/lua/5.4.7//include/lua/**",
                 "/opt/homebrew/Cellar/mpich/4.3.0//include/**",
                 "/opt/homebrew/Cellar/hdf5/1.14.6//include/**",
-                "/opt/homebrew/Cellar/gsl/2.8//include/**",
+                "/opt/homebrew/Cellar/gsl/2.8//include/**"
             ],
             "defines": [],
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/opt/homebrew/Cellar/gcc/14.2.0_1/bin/gcc-14",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64"
-        },
+        }
     ],
     "version": 4
 }

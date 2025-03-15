@@ -1,0 +1,105 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug gomc",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/build/gomc",  // 指向 src/build/gomc
+            "args": ["param.lua"],  // 传入参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src",  // 工作目录设置为 src
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug snopac",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/build/snopac",  // 指向 src/build/snopac
+            "args": ["param.lua"],  // 传入参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src",  // 工作目录设置为 src
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug chk",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/build/chk",  // 指向 src/build/chk
+            "args": ["param.lua"],  // 传入参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src",  // 工作目录设置为 src
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug spectrum",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/build/spectrum",  // 指向 src/build/spectrum
+            "args": ["param.lua"],  // 传入参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src",  // 工作目录设置为 src
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug la_test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/build/la_test",  // 指向 src/build/la_test
+            "args": ["param.lua"],  // 传入参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src",  // 工作目录设置为 src
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
