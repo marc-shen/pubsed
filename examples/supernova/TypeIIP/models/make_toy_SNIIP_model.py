@@ -36,7 +36,7 @@ dv    = vmax/(1.0*nx)
 # amount to reduce thermal energy by = R_ej/R0
 # use R_ej ~ 3*v_e*t as rough outer edge of ejecda
 adiabatic_factor = (3*v_e*texp/R0)**(-1.0)
-print adiabatic_factor,v_e/1e9
+print (adiabatic_factor,v_e/1e9)
 
 v1d     = np.arange(dv,vmax*1.0001,dv)
 t1d     = np.zeros(nx)
